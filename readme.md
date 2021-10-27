@@ -19,8 +19,8 @@ analysis.queuedParams.P = 0.1;
 analysis.queuedParams.MaxSS = 3;
 analysis.queuedParams.numerator = 4;
 analysis.queuedParams.levels = 3;
-//RUN ALL CALCULATIONS
-analysis.update(false);
+//RUN ALL CALCULATIONS (true meaning generate new weights)
+analysis.update(true);
 ```
 The library is smart enough to only run updates on the parts of the code that need to be updated, so it would be smart to save this SiorosAnalysis object somewhere safe ;)
 
@@ -28,7 +28,8 @@ The library is smart enough to only run updates on the parts of the code that ne
 None, python is beautiful and easy.
 ```
 #BARLOW
-phi = stochasticBarlow(n, z, R, M)
+phi = clarenceBarlow(4, 3)
 #SIOROS
-syncopatedBarlow(phi, 0, ssMax, sync_weights, sync_counter_weights)
+st_phi = stochasticBarlow(n, z, R, M)
+sy_phi =syncopatedBarlow(st_phi, 0, ssMax, sync_weights, sync_counter_weights)
 ```

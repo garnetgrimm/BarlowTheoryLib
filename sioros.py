@@ -192,5 +192,5 @@ phi = stochasticBarlow(n, z, R, M)
 sync_weights = randomWeights(len(phi))
 sync_counter_weights = randomWeights(len(phi))
 
-print(phi)
+print(clarenceBarlow(4, 3))
 print(syncopatedBarlow(phi, 0, ssMax, sync_weights, sync_counter_weights))
